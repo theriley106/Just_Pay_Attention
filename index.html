@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- see https://leightley.com/gist-html5-video-player-with-javascript/ -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Compliance Training</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+      padding-top: 54px;
+    }
+
+    video {
+      padding-top: 100px;
+      width: 80%;
+      height: 80%;
+    }
+    @media (min-width: 992px) {
+      body {
+        padding-top: 56px;
+      }
+    }
+  </style>
+<script>
+</script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div>
+      <img src="{{url_for('static', filename='logo.png')}}" height="80px">
+      <font color="red">
+     Compliance Training
+    </font>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div id="message"></div>
+        <video controls autoplay></video>
+        <ul class="list-unstyled">
+          <li><input type="file" accept="video/*" /></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <script>
+    (function localFileVideoPlayer() {
+      'use strict'
+      var URL = window.URL || window.webkitURL
+
+      var playSelectedFile = function(event) {
+        var file = this.files[0]
+        var type = file.type
+        var videoNode = document.querySelector('video')
+        var canPlay = videoNode.canPlayType(type)
+        var isError = canPlay === 'no'
+
+        if (isError) {
+          return
+        }
+
+        var fileURL = URL.createObjectURL(file)
+        videoNode.src = fileURL
+      }
+      var inputNode = document.querySelector('input')
+      inputNode.addEventListener('change', playSelectedFile, false)
+    })()
+    preVal = "";
+    window.setInterval(function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", "http://127.0.0.1:9000/", false ); // false for synchronous request
+    xmlHttp.send( null );
+    if (String(xmlHttp.responseText) != "0") {
+      if (String(xmlHttp.responseText) != preVal) {
+      document.querySelector('video').pause();
+    }
+    }
+    else {
+      if (String(xmlHttp.responseText) != preVal) {
+      document.querySelector('video').play();
+    }
+    }
+    preVal = String(xmlHttp.responseText);
+    console.log(String(xmlHttp.responseText));
+}, 200    )
+  </script>
+</body>
+
+</html>
