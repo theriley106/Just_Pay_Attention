@@ -1,15 +1,24 @@
 import os
 import re
+import time
 
 def extract_from_resource_id(all_info, string):
 	return all_info.partition(string)[0][::-1].partition('text="'[::-1])[0][::-1]
 
 def grab_ui_automator():
-	command = "sudo adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') info.xml"
+	command = "adb pull $(adb shell uiautomator dump | grep -oP '[^ ]+.xml') /tmp/view.xml"
 	os.system(command)
-	all_info = open("info.xml").read()
+	time.sleep(.1)
+	all_info = open("/tmp/view.xml").read()
 	attention_val = extract_from_resource_id(all_info, '" resource-id="com.pwittchen.eeganalyzer:id/tv_attention"')
-	print attention_val
+	meditation_val = extract_from_resource_id(all_info, '" resource-id="com.pwittchen.eeganalyzer:id/tv_meditation"')
+	blink_val = extract_from_resource_id(all_info, '" resource-id="com.pwittchen.eeganalyzer:id/tv_blink"')
+	raw_val = extract_from_resource_id(all_info, '" resource-id="com.pwittchen.eeganalyzer:id/tv_raw_data"')
+	print("Attention Value: {}".format(attention_val))
+	print("Meditation Value: {}".format(meditation_val))
+	print("Blink Value: {}".format(blink_val))
+	print("Raw Value: {}".format(raw_val))
 
 if __name__ == '__main__':
-	grab_ui_automator()
+	for i in range(100):
+		grab_ui_automator()

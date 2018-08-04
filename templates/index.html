@@ -74,21 +74,13 @@
       var URL = window.URL || window.webkitURL
 
       var playSelectedFile = function(event) {
-        var file = this.files[0]
-        var type = file.type
         var videoNode = document.querySelector('video')
-        var canPlay = videoNode.canPlayType(type)
-        var isError = canPlay === 'no'
-
-        if (isError) {
-          return
-        }
-
-        var fileURL = URL.createObjectURL(file)
+        var fileURL = "{{url_for('static', filename='video.mp4')}}"
+        console.log(fileURL)
         videoNode.src = fileURL
       }
       var inputNode = document.querySelector('input')
-      inputNode.addEventListener('change', playSelectedFile, false)
+      playSelectedFile()
     })()
     preVal = "";
     window.setInterval(function httpGet(theUrl)
@@ -96,7 +88,7 @@
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open( "GET", "http://127.0.0.1:9000/", false ); // false for synchronous request
     xmlHttp.send( null );
-    if (String(xmlHttp.responseText) != "0") {
+    if (String(xmlHttp.responseText) == "0") {
       if (String(xmlHttp.responseText) != preVal) {
       document.querySelector('video').pause();
     }
