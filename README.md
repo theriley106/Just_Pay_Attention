@@ -25,7 +25,7 @@ This concept was really interesting to me, and I was curious to see if there was
 
 I also wanted to take it a step further and redefine the way it considers the user to be at attention.  Most compliance training frameworks only use the currently focused window to determine attentiveness, but this classification fails if the user simply opens up the window and walks away.
 
-This framework uses a combination of brain waves from a commercial EEG headset and Pupil/Eye detection using OpenCV to quantify how attentive the user is.  In the case of compliance training, the training will pause if the program detects that the employee is no longer paying attention.
+The *Just_Pay_Attention* framework uses a combination of brain waves from a commercial EEG headset and Pupil/Eye detection using OpenCV to quantify how attentive the user is.  In the case of compliance training, the training will pause if the program detects that the employee is no longer paying attention.
 
 ## Technical Explanation
 
