@@ -1,11 +1,12 @@
-Just_Pay_Attention
-===============
+<h1 align="center">Just_Pay_Attention</h1>
 
-Employee compliance training videos often have a component that pauses the training when the window is not in focus.
+Employee compliance training that uses EEG waves and pupil detection to pause when the user isn't paying attention
 
 <h2 align="center"><a href="https://www.youtube.com/watch?v=ttMWoj_lk0o">Click Here to Watch the Demo on Youtube</a></h2>
 
 ## Overview
+
+Employee compliance training videos often have a component that pauses the training when the window is not in focus.
 
 Javascript example:
 
