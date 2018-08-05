@@ -27,5 +27,7 @@ I also wanted to take it a step further and redefine the way it considers the us
 
 The *Just_Pay_Attention* framework uses a combination of brain waves from a commercial EEG headset and Pupil/Eye detection using OpenCV to quantify how attentive the user is.  In the case of compliance training, the training will pause if the program detects that the employee is no longer paying attention.
 
+##
+
 [![N|Solid](static/ui.png)](#)
 <p align="center">Example Compliance Training Website</p>
