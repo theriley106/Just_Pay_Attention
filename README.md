@@ -1,6 +1,6 @@
 <h1 align="center">Just_Pay_Attention</h1>
 
-Employee compliance training that uses EEG waves and pupil detection to pause when the user isn't paying attention
+<p align="center"><b>Employee compliance training that uses EEG waves and pupil detection to pause when the user isn't paying attention</b></p>
 
 <h2 align="center"><a href="https://www.youtube.com/watch?v=ttMWoj_lk0o">Click Here to Watch the Demo on Youtube</a></h2>
 
