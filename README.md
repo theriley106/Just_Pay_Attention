@@ -3,6 +3,10 @@ Just_Pay_Attention
 
 Employee compliance training videos often have a component that pauses the training when the window is not in focus.
 
+<h2 align="center"><a href="https://www.youtube.com/watch?v=ttMWoj_lk0o">Click Here to Watch the Demo on Youtube</a></h2>
+
+## Overview
+
 Javascript example:
 
 ```javascript
@@ -19,4 +23,8 @@ This is implemented into the compliance training videos to *ensure* that the emp
 
 To ensure 100% employee attentiveness, I've created a framework that uses brain waves from a commercial EEG headset as well as pupil/eye tracking using OpenCV to quantify how attentive an employee is.  If the program detects that the employee is no longer paying attention the video will pause.  Positively ensuring that the content is absorbed in it's entirety.
 
+## Technical Explanation
+
 I thought it would be interesting to branch off of this concept, and create a way of
+
+
